@@ -1,0 +1,12 @@
+
+# AWS Credential file
+aws/
+python-api/
+
+.aws.env
+.env
+
+# Terraform related files
+tf/.terraform*
+tf/.terraform
+tf/terraform*

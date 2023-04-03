@@ -1,0 +1,38 @@
+{
+    "family": "flask-api-task",
+    "containerDefinitions": [
+        {
+            "name": "flask-api-container",
+            "image": "738510716085.dkr.ecr.us-east-1.amazonaws.com/flask-api:22e5738",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "name": "flask-api-80-tcp",
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                },
+                {
+                    "name": "flask-api-5000-tcp",
+                    "containerPort": 5000,
+                    "hostPort": 5000,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "mountPoints": [],
+            "volumesFrom": []
+        }
+    ],
+    "taskRoleArn": "arn:aws:iam::738510716085:role/ecr-task-execution-role",
+    "executionRoleArn": "arn:aws:iam::738510716085:role/ecr-task-execution-role",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "3072"
+}
