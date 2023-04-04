@@ -19,6 +19,7 @@ docker-build:
 docker-push:
 	aws ecr get-login-password --region $(AWS_REGION) | docker login --username AWS --password-stdin $(ECR_URL)
 	docker push $(ECR_URL):$(GIT_REVISION)
+	sed -i -e "s/IMAGE_TAG/$(GIT_REVISION)/g" task-def.json
 
 update-task:
 	aws ecs register-task-definition --region $(AWS_REGION) --cli-input-json file://task-def.json --query 'taskDefinition.taskDefinitionArn'

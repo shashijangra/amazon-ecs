@@ -3,7 +3,7 @@
     "containerDefinitions": [
         {
             "name": "flask-api-container",
-            "image": "738510716085.dkr.ecr.us-east-1.amazonaws.com/flask-api:22e5738",
+            "image": "738510716085.dkr.ecr.us-east-1.amazonaws.com/flask-api:IMAGE_TAG",
             "cpu": 0,
             "portMappings": [
                 {
